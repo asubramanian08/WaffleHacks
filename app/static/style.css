@@ -15,6 +15,16 @@ color: #000000;
 
 }
 
+.bg{
+  position: absolute;
+width: 1512px;
+height: 907px;
+left: 0px;
+top: 75px;
+
+background: #F5E1E3;
+}
+
 .topnav {
  
 position: absolute;
