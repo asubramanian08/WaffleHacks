@@ -14,7 +14,7 @@ def index():
     # radius set as default to 50000 meters, can change later to user input
     radius = "50000"
     searchType = "restaurant"
-    key = os.environ.get("API_KEY")
+    key = os.environ.get("GOOGLE_API_KEY")
 
     url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + \
         location+"&radius="+radius+"&type="+searchType+"&key="+key
