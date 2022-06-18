@@ -1,0 +1,1 @@
+cockroach sql --url "postgresql://chantal:wafflehacks2022@free-tier6.gcp-asia-southeast1.cockroachlabs.cloud:26257/defaultdb?options=--cluster%3Dwafflehacks-2805&sslmode=verify-full&sslrootcert=%2Fhome%2Fchantal%2F.postgresql%2Froot.crt"
