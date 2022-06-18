@@ -1,111 +1,99 @@
 <head>
-    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='style.css')}}"/> 
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
     <div class="topnav">
         <form action="/"><a><button class="redirect" id="Home">Nibble</button></a></form>
-        <form action="/"><a><button class="redirect" >Home</button></a></form>
-        <form action="/Find Food"><a><button class="redirect" >Find Food</button></a></form>
-        <form action="/Calories"><a><button class="redirect" >Calories</button></a></form>
-        <form action="/register"><a><button class="redirect" id="signup" >Signup</button></a></form>
-        <form action="/login"><a><button class="redirect" id="signup" >Login</button></a></form>
-      </head>
-       
-        <link rel="shortcut icon" href="favicon.ico" />
-        <title>Registration</title>
-        <meta
-         name="description"
-         content="Register here to play the greatest game ever seen!"
-       />
-        <meta name="keywords" content="register, play, game" />
-        <script language="JavaScript" type="text/javascript">
-    
-         function checkform (form)
-         {
-    
-             function isEmpty (fixwhat, s_called)
-             {
-                 if (fixwhat=="")
-                 {
-                 alert("Please enter " + s_called);
-                 return true;
-                 } else {
-                 return false;
-                 }
-             }
-    
-             function charCheck(fixwhat)
-             {
-                 var validchars = '@-_.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                 if(isValid(fixwhat,validchars))
-                 {
-                     return true;
-                 } else {
-                     alert("Please use only letters or numbers in this field");
-                     return false;
-                 }
-             }
-    
-             function isValid(string,validchars)
-             {
-                 for (var i=0; i< string.length; i++)
-                 {
-                 if (validchars.indexOf(string.charAt(i)) === -1) {return false;}
-                 }
-                 return true;
-             }
-    
-             //check for empty fields
-             if (is_empty (form.t_email.value,"your email address")) { form.t_email.focus();  return false;}
-             if (is_empty (form.t_password.value,"your password")) { form.t_password.focus();  return false;}
-    
-             //check for weird chars
-             if (charCheck(form.t_email.value)===false) {form.t_email.focus(); return false;}
-             if (charCheck(form.t_password.value)===false) {form.t_password.focus(); return false;}
-    
-             return true ;
-         }
+        <form action="/"><a><button class="redirect">Home</button></a></form>
+        <form action="/Find Food"><a><button class="redirect">Find Food</button></a></form>
+        <form action="/Calories"><a><button class="redirect">Calories</button></a></form>
+        <form action="/register"><a><button class="redirect" id="signup">Signup</button></a></form>
+        <form action="/login"><a><button class="redirect" id="signup">Login</button></a></form>
+</head>
+
+<link rel="shortcut icon" href="favicon.ico" />
+<title>Registration</title>
+<meta name="description" content="Register here to play the greatest game ever seen!" />
+<meta name="keywords" content="register, play, game" />
+<script language="JavaScript" type="text/javascript">
+
+    function checkform(form) {
+
+        function isEmpty(fixwhat, s_called) {
+            if (fixwhat == "") {
+                alert("Please enter " + s_called);
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function charCheck(fixwhat) {
+            var validchars = '@-_.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            if (isValid(fixwhat, validchars)) {
+                return true;
+            } else {
+                alert("Please use only letters or numbers in this field");
+                return false;
+            }
+        }
+
+        function isValid(string, validchars) {
+            for (var i = 0; i < string.length; i++) {
+                if (validchars.indexOf(string.charAt(i)) === -1) { return false; }
+            }
+            return true;
+        }
+
+        //check for empty fields
+        if (is_empty(form.t_email.value, "your email address")) { form.t_email.focus(); return false; }
+        if (is_empty(form.t_password.value, "your password")) { form.t_password.focus(); return false; }
+
+        //check for weird chars
+        if (charCheck(form.t_email.value) === false) { form.t_email.focus(); return false; }
+        if (charCheck(form.t_password.value) === false) { form.t_password.focus(); return false; }
+
+        return true;
+    }
          //-->
-        </script>
-    
-        
-      </head>
-      <body>
-        <h3 id="login"></h1>
-    
+</script>
+
+
+</head>
+
+<body>
+    <h3 id="login">
+        </h1>
+
         <div class="bg">
-          <form
-          class="form-reg"
-           name="frmInfo"
-           action="/Sign-in"
-           method="post"
-           onsubmit="return checkform(this);"
-         >
-    
-           
-            
-            <div class="form-row">
-              <label for="Email">Email address:</label>
-              <input type="text" id="t_Email" name="t_Email" />
-            </div>
-    
-            <div class="form-row">
-              <label for="Email">Password:</label>
-              <input type="text" id="t_Password" name="t_Password" />
-            </div>
-    
-    
-            <div class="form-row">
-              <input type="submit" id="btn_submit" value="Register" />
-            </div>
-    
-            <div class="down-home"><p>©Nibble 2022. All Rights Reserved.</p></div>
-           
-    
-    
-          </form>
-    
+            <form class="form-reg" name="frmInfo" action="/Sign-in" method="post" onsubmit="return checkform(this);">
+
+
+
+                <div class="form-row">
+                    <label for="Email">Email address:</label>
+                    <input type="text" id="t_Email" name="t_Email" />
+                </div>
+
+                <div class="form-row">
+                    <label for="Email">Password:</label>
+                    <input type="text" id="t_Password" name="t_Password" />
+                </div>
+
+
+                <div class="form-row">
+                    <input type="submit" id="btn_submit" value="Register" />
+                </div>
+
+                <div class="down-home">
+                    <p>©Nibble 2022. All Rights Reserved.</p>
+                </div>
+
+
+
+            </form>
+
         </div>
-        
-    
-      </body>
-      
-    </html>
+
+
+</body>
+
+</html>
