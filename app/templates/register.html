@@ -2,10 +2,11 @@
 <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='style.css')}}"/> 
 <div class="topnav">
     <form action="/"><a><button class="redirect" id="Home">Nibble</button></a></form>
-    <form action="/Home"><a><button class="redirect" >Home</button></a></form>
+    <form action="/"><a><button class="redirect" >Home</button></a></form>
     <form action="/Find Food"><a><button class="redirect" >Find Food</button></a></form>
     <form action="/Calories"><a><button class="redirect" >Calories</button></a></form>
     <form action="/register"><a><button class="redirect" id="signup" >Signup</button></a></form>
+    <form action="/Sign-in"><a><button class="redirect" id="signup" >Login</button></a></form>
   </head>
    
     <link rel="shortcut icon" href="favicon.ico" />
@@ -68,20 +69,18 @@
     
   </head>
   <body>
-    <h3 id="login">Sign Up</h1>
+    <h3 id="login"></h1>
 
-    <div class="container">
+    <div class="bg">
       <form
+      class="form-reg"
        name="frmInfo"
        action="/register"
        method="post"
        onsubmit="return checkform(this);"
      >
 
-        <div class="form-row">
-          <label for="Email">Username:</label>
-          <input type="text" id="t_Username" name="t_Username">
-        </div>
+       
         
         <div class="form-row">
           <label for="Email">Email address:</label>
@@ -98,10 +97,15 @@
           <input type="submit" id="btn_submit" value="Register" />
         </div>
 
+        <div class="down-home"><p>©Nibble 2022. All Rights Reserved.</p></div>
+       
+
 
       </form>
 
     </div>
+    
 
   </body>
+  
 </html>

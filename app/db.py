@@ -71,8 +71,23 @@ def getRating(restaurant, dietary_rest):
     return result[0]
 
 
-initDB(conn)
-addUser(conn, email='hi@gmail.com', password='pass')
-createReview(revText='This place was good!',
-             restaurant='subway', dietary_rest='vegan', rating=5)
-print(getRating('subway', 'vegan'))
+
+def validate_login(conn, email, password):
+   
+    with conn.cursor() as cur:
+        
+        cur.execute(
+            f"SELECT user_id FROM user_info WHERE email='{email}' AND password='{password}'"
+        )
+        result = cur.fetchone()
+        conn.commit()
+        print(result)
+
+
+
+# initDB(conn)
+#addUser(conn, email='hi@gmail.com', password='pass')
+# createReview(revText='This place was good!',
+#              restaurant='subway', dietary_rest='vegan', rating=5)
+# print(getRating('subway', 'vegan'))
+#validate_login(conn, email='hi@gmail.com', password='pass')
