@@ -1,0 +1,370 @@
+.signup{
+  position: absolute;
+width: 290px;
+height: 75px;
+left: 1251px;
+top: 14px;
+
+font-family: 'Habibi';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 50px;
+
+color: #000000;
+
+}
+
+.topnav {
+ 
+position: absolute;
+width: 100%;
+height: 100px;
+left: 0px;
+top: 0px;
+
+background: #D19C9D;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #7f7dce;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  z-index: 1000;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: #7f7dce;
+  border-radius: 15px 15px 15px 15px;
+}
+
+/* Add a color to the active/current link */
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #6084ad;
+  mix-blend-mode: overlay;
+}
+
+button {
+  background-color: transparent;
+  font-size: 20px;
+  border: none;
+  color: #565596;
+}
+
+.account{
+  position: relative;
+  float: right;
+}
+
+#Home {
+  position: relative;
+  text-align: center;
+  color: #7f7dce;
+  font-size: 50px;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+.about {
+  position: relative;
+  z-index: 1000;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  display: flex;
+  vertical-align: middle;
+  justify-content: space-between;
+  margin-left: 0%;
+  margin-top: 5%;
+  font-size: 75px;
+  color: #7f7dce;
+}
+
+.text {
+  position: absolute;
+width: 588px;
+height: 75px;
+left: 30px;
+top: 4px;
+
+font-family: 'Habibi';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 62px;
+
+color: #000000;
+
+}
+
+p {
+  font-size: 40px;
+  margin-top: 7%;
+  margin-left: 5%;
+}
+
+h1 {
+  margin-top: 10%;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+.lead {
+  position: relative;
+  z-index: 1000;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  display: flex;
+  vertical-align: middle;
+  justify-content: space-between;
+  margin-left: 30%;
+  margin-top: 2%;
+  font-size: 75px;
+  color: #7f7dce;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 50px;
+  color: #393868;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+#login {
+  position: relative;
+  z-index: 1000;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  display: flex;
+  vertical-align: middle;
+  justify-content: space-between;
+  margin-left: 40%;
+  margin-top: 2%;
+  font-size: 75px;
+  color: #7f7dce;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+label {
+  position: relative;
+  z-index: 1000;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  display: flex;
+  vertical-align: middle;
+  justify-content: space-between;
+  margin-left: 20%;
+  margin-top: 2%;
+  font-size: 50px;
+  color: #7f7dce;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+input {
+  margin-left: 20%;
+  margin-top: 2%;
+  font-size: 40px;
+  border-radius: 15px 15px 15px 15px;
+  border: none;
+}
+
+#baljeet {
+  width: 300px;
+  height: auto;
+  border-radius: 50%;
+  margin-left: 0%;
+}
+
+.name_left {
+  position: relative;
+  z-index: 1000;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  display: flex;
+  vertical-align: middle;
+  justify-content: space-between;
+  margin-left: 17%;
+  margin-top: 2%;
+  font-size: 50px;
+  color: #7f7dce;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.email {
+  position: relative;
+  z-index: 1000;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  display: flex;
+  vertical-align: middle;
+  justify-content: space-between;
+  margin-left: 0%;
+  margin-top: 2%;
+  font-size: 22px;
+  color: #7f7dce;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+#chantal {
+  position: relative;
+  z-index: 1000;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  display: flex;
+  vertical-align: middle;
+  justify-content: space-between;
+  margin-left: 15%;
+  margin-top: 2%;
+  font-size: 50px;
+  color: #7f7dce;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+#stacy {
+  width: 300px;
+  height: auto;
+  border-radius: 50%;
+  margin-left: 0%;
+}
+
+#michelle {
+  position: relative;
+  z-index: 1000;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  margin-left: 12%;
+  margin-top: 2%;
+  font-size: 50px;
+  color: #7f7dce;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+#isabella {
+  position: relative;
+  width: 300px;
+  height: auto;
+  border-radius: 50%;
+  margin-left: 0%;
+  float:top;
+}
+
+#noor {
+  position: relative;
+  z-index: 1000;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  margin-left: 12%;
+  margin-top: 2%;
+  font-size: 50px;
+  color: #7f7dce;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+#perry {
+  position: relative;
+  width: 300px;
+  height: auto;
+  border-radius: 50%;
+  margin-left: 0%;
+  float:top;
+}
+
+.recycle {
+  position: relative;
+  z-index: 1000;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  display: flex;
+  vertical-align: middle;
+  justify-content: space-between;
+  margin-left: 30%;
+  margin-top: 0%;
+  font-size: 25px;
+  color: #7f7dce;
+}
+
+#yes {
+  position: absolute;
+  margin-left: 5%;
+  margin-top: 30%;
+  font-size: 40px;
+  border-radius: 15px 15px 15px 15px;
+  border: none;
+}
+
+#no {
+  position: absolute;
+  margin-left: 30%;
+  margin-top: 30%;
+  font-size: 40px;
+  border-radius: 15px 15px 15px 15px;
+  border: none;
+}
