@@ -5,5 +5,10 @@ app = Flask(__name__)
 def index():
     return render_template("website.html")
 
+@app.route('/register')
+def index():
+    return render_template("register.html")
+
+
 app.run(host='0.0.0.0', port=81)
 
