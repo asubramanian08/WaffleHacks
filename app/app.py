@@ -1,8 +1,8 @@
+import db
+from psycopg2.errors import SerializationFailure
+import psycopg2
 from flask import Flask, session, redirect, url_for, escape, request, render_template
 app = Flask(__name__)
-import db 
-import psycopg2
-from psycopg2.errors import SerializationFailure
 
 
 conn = psycopg2.connect(
@@ -14,7 +14,7 @@ def index():
     return render_template("website.html")
 
 
-@app.route("/register", methods=["POST","GET"])
+@app.route("/register", methods=["POST", "GET"])
 def register():
     # get user input from the html form
     t_username = request.form.get("t_Username", "")
@@ -39,7 +39,7 @@ def register():
 @app.route("/Sign-in", methods=["POST", "GET"])
 def signin():
     if request.method == 'POST':
-       
+
         t_email = request.form.get("t_Email", "")
         t_password = request.form.get("t_Password", "")
         db.validate_login(conn, email=t_email, password=t_password)
@@ -47,5 +47,5 @@ def signin():
         return redirect(url_for("counter_init"))
     return render_template("login.html")
 
-app.run(host='0.0.0.0', port=81)
 
+app.run(host='0.0.0.0', port=81)
