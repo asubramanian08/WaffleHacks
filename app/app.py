@@ -1,5 +1,7 @@
 from sqlite3 import dbapi2
 import db
+import os
+import requests
 import map
 from psycopg2.errors import SerializationFailure
 import psycopg2
@@ -64,8 +66,33 @@ def table():
         
     #location = form.get(whatever user puts in form)
     #use geolocation API to convert location to proper format
+    #REPLACE THIS ADDRESS with what user gets from form
+    address= "9500%20Gilman%20Dr%20La Jolla%20CA%2092093"
 
-    places = map.get_restaurants("0")
+    lat, lng = None, None
+    key = os.environ.get("GOOGLE_API_KEY")
+    base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+    endpoint = f"{base_url}?address={address}&key={key}"
+    # see how our endpoint includes our API key? Yes this is yet another reason to restrict the key
+    r = requests.get(endpoint)
+    if r.status_code not in range(200, 299):
+        return None, None
+    try:
+       # '''
+        #This try block incase any of our inputs are invalid. This is done instead
+        #of actually writing out handlers for all kinds of responses.
+        #'''
+        results = r.json()['results'][0]
+        lat = results['geometry']['location']['lat']
+        lng = results['geometry']['location']['lng']
+    except:
+        pass
+    
+    location = str(lat)+","+str(lng)
+    #location = "32.8801,-117.2340"
+    print(location)
+
+    places = map.get_restaurants(location)
     data = []
     for place in places: 
         rest = []
@@ -94,7 +121,7 @@ def table():
         
         data.append(rest)
     
-    headings = ('Name','Address')
+    headings = ('Name','Address', 'Rating')
     return render_template("maps.html", headings=headings, data=data)
     
 
