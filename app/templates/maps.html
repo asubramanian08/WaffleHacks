@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <head>
+            <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+            <div class="topnav">
+                <form action="/"><a><button class="redirect" id="Home">Nibble</button></a></form>
+                <form action="/"><a><button class="redirect">Home</button></a></form>
+                <form action="/restriction"><a><button class="redirect">Find Food</button></a></form>
+                <form action="/Calories"><a><button class="redirect">Calories</button></a></form>
+                <form action="/Sign-in"><a><button class="redirect" id="signup">Signup</button></a></form>
+                <form action="/Sign-in"><a><button class="redirect" id="signup">Login</button></a></form>
+        
+        </head>
+    </head>
+    <body>
+        <table class="table">
+            <tr class="table__header">
+                {% for header in headings %}
+                <th class="table__cell">{{header}}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data %}
+            <tr class="table__row">
+                {% for cell in row %}
+                <td>{{cell}}</td>
+                {% endfor%}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

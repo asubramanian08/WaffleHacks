@@ -152,17 +152,17 @@ def resetTables() -> None:
     conn.commit()
 
 
-def testDB() -> None:
-    """ Quick check to ensure db.py is working. """
-    # resetTables()
-    initDB()
-    addUser(email='hi@gmail.com', password='pass')
-    createReview(revText='This place was good!',
-                 restaurant='subway', dietary_rest='vegan', rating=5)
-    print(getRating('subway', 'vegan'))
-    print(getReviews('subway', 'vegan'))
-    print(validate_login(email='hi@gmail.com', password='pass'))
-    print(validate_login(email='hi@gmail.com', password='wrongPass'))
+# def testDB() -> None:
+#     """ Quick check to ensure db.py is working. """
+#     # resetTables()
+#     initDB()
+#     addUser(email='hi@gmail.com', password='pass')
+#     createReview(revText='This place was good!',
+#                  restaurant='subway', dietary_rest='vegan', rating=5)
+#     print(getRating('subway', 'vegan'))
+#     print(getReviews('subway', 'vegan'))
+#     print(validate_login(email='hi@gmail.com', password='pass'))
+#     print(validate_login(email='hi@gmail.com', password='wrongPass'))
 
 
-testDB()
+# testDB()

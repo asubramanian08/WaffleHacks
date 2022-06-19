@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="design.css" rel="stylesheet" type="text/css" />
   
 <header>
  <div class="topnav">
@@ -17,23 +17,23 @@
   <main style="background-color:#D19C9D">
     <section class="dietary restriction">
            
-            <form class="form">
+            <form class="form" action="/restriction" method="post">
               <fieldset>
                 <div class="fields-container">
                    <h1>Dietary Restriction</h1>
             <p>Click which one suits you.</p>
                   <br>
-                  <button type="button">Alcohol-Free</button>
+                  <button name="submit_button" method='post'type="submit" value="Alcohol-Free">Alcohol-Free</button>
                   
-                  <button type="button">Kosher</button>
+                  <button name="submit_button" method='post'type="submit", value="Kosher">Kosher</button>
                   <br>
                   <br>
-                  <button type="button">Halal</button>
-                  <button type="button">Vegeterian</button>
+                  <button name="submit_button" method='post' type="submit" value="Halal">Halal</button>
+                  <button name="submit_button" type="submit" method="post" value="Vegatarian">Vegaterian</button>
                   <br>
                   <br>
-                  <button type="button">Gluten Free</button>
-                  <button type="button">Vegan</button>
+                  <button name="submit_button" method='post'type="submit", value="Gluten Free">Gluten Free</button>
+                  <button name="submit_button" type="submit" method='post' value="Vegan" >Vegan</button>
                   <br>
                   <br>
 

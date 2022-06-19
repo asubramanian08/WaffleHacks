@@ -13,7 +13,7 @@ def get_restaurants(location):
     key = os.environ.get("GOOGLE_API_KEY")
 
     url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + \
-        location+"&radius="+radius+"&type="+searchType+"&key="+key
+        "32.8801,-117.2340"+"&radius="+radius+"&type="+searchType+"&key="+key
 
     payload = {}
     headers = {}
@@ -24,6 +24,7 @@ def get_restaurants(location):
     places = []
     response_json = response.json()
     places.extend(response_json["results"])
+
     return places
 
 
