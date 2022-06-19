@@ -81,10 +81,16 @@ def table():
            rest.append(place['vicinity'])
         except: 
            rest.append('none')
-       # try: 
-        #   rest.append(place['price_level'])
+        
+        #try: 
+           #rest.append(place['price_level'])
         #except: 
            #rest.append('none')
+        
+        try: 
+            rest.append(db.getRating(name,restriction))
+        except: 
+            rest.append('none')
         
         data.append(rest)
     
@@ -92,5 +98,7 @@ def table():
     return render_template("maps.html", headings=headings, data=data)
     
 
-
+@app.route("/searchmap2", methods=["POST", "GET"])
+def search_map2():
+    return render_template("maps2.html")
 app.run(host='0.0.0.0', port=81)
