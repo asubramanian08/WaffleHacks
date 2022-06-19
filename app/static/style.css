@@ -242,12 +242,7 @@ font-size: 35px;
 line-height: 44px;
 } 
 
-#baljeet {
-  width: 300px;
-  height: auto;
-  border-radius: 50%;
-  margin-left: 0%;
-}
+
 
 .name_left {
   position: relative;
@@ -292,6 +287,30 @@ body {
   padding: 0 10px;
 }
 
+.reviews{
+  position: absolute;
+width: 1020px;
+height: 685px;
+left: 246px;
+top: 156px;
+
+background: #D19C9D;
+border-radius: 50px;
+}
+
+.resto{
+  position:relative;
+  
+width: 400px;
+height: 950px;
+left: 999px;
+top: 100px;
+bottom:600px;
+
+background: #FFFFFF;
+border-radius: 50px;
+}
+
 /* Remove extra left and right margins, due to padding in columns */
 .row {margin: 0 -5px;}
 
@@ -327,69 +346,7 @@ body {
   background-color: #f1f1f1;
 }
 
-#chantal {
-  position: relative;
-  z-index: 1000;
-  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-  display: flex;
-  vertical-align: middle;
-  justify-content: space-between;
-  margin-left: 15%;
-  margin-top: 2%;
-  font-size: 50px;
-  color: #7f7dce;
-  text-decoration: underline;
-  font-style: italic;
-}
 
-#stacy {
-  width: 300px;
-  height: auto;
-  border-radius: 50%;
-  margin-left: 0%;
-}
-
-#michelle {
-  position: relative;
-  z-index: 1000;
-  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-  margin-left: 12%;
-  margin-top: 2%;
-  font-size: 50px;
-  color: #7f7dce;
-  text-decoration: underline;
-  font-style: italic;
-}
-
-#isabella {
-  position: relative;
-  width: 300px;
-  height: auto;
-  border-radius: 50%;
-  margin-left: 0%;
-  float:top;
-}
-
-#noor {
-  position: relative;
-  z-index: 1000;
-  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-  margin-left: 12%;
-  margin-top: 2%;
-  font-size: 50px;
-  color: #7f7dce;
-  text-decoration: underline;
-  font-style: italic;
-}
-
-#perry {
-  position: relative;
-  width: 300px;
-  height: auto;
-  border-radius: 50%;
-  margin-left: 0%;
-  float:top;
-}
 
 .recycle {
   position: relative;
