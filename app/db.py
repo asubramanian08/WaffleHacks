@@ -7,6 +7,7 @@ import logging
 import os
 from argparse import ArgumentParser, RawTextHelpFormatter
 import logging
+import map
 
 import psycopg2
 from psycopg2.errors import SerializationFailure
@@ -93,7 +94,8 @@ def getRating(restaurant: str, dietary_rest: str) -> float:
     return result
 
 
-def getReviews(restaurant: str, dietary_rest: str) -> [str, ...]:
+
+def getReviews(restaurants):
     """ Get all the reviews from a restaurant with a dietary restriction.
         Returns an empty list '[]' if there are no reviews. """
     global conn
@@ -102,8 +104,8 @@ def getReviews(restaurant: str, dietary_rest: str) -> [str, ...]:
         # execute sql
         cur.execute(
             f"SELECT revText FROM reviews \
-            WHERE restaurant='{restaurant}' AND dietary_rest='{dietary_rest}'")
-        result = [i[0] for i in cur.fetchall()]
+            WHERE restaurant='{restaurants}'")
+        result = cur.fetchall()
 
         # send logger message for debugging
         logging.debug("getReviews(): status message: %s", cur.statusmessage)
@@ -115,7 +117,9 @@ def getReviews(restaurant: str, dietary_rest: str) -> [str, ...]:
     return result
 
 
-def validate_login(email: str, password: str) -> bool:
+
+
+def validate_login(email, password):
     """ Return True if the email and password are a valid user,
         otherwise it returns False. """
     global conn
@@ -124,7 +128,7 @@ def validate_login(email: str, password: str) -> bool:
         # execute sql
         cur.execute(f"SELECT user_id FROM user_info \
             WHERE email='{email}' AND password='{password}'")
-        result = cur.fetchone() != None
+        result = cur.fetchone() 
 
         # send logger message for debugging
         logging.debug("validate_login(): status message: %s", cur.statusmessage)
@@ -136,20 +140,46 @@ def validate_login(email: str, password: str) -> bool:
     return result
 
 
-def resetTables() -> None:
-    """ Drop all the tables made: for debugging purposes. """
-    global conn
-    with conn.cursor() as cur:
 
-        # execute sql
-        cur.execute("DROP TABLE user_info"),
-        cur.execute("DROP TABLE reviews"),
+initDB()
+addUser(email='hi@gmail.com', password='pass')
 
-        # send logger message for debugging
-        logging.debug("resetTables(): status message: %s", cur.statusmessage)
+createReview(restaurant=  "Karl Strauss Brewing Company",
+revText="Subway is my goto when I want to grab a quick late night meal. Cant really go wrong with a sub -- just wish they had more vegetarian pre-made subs available. Veggie Delight gets boring after a while.",
+dietary_rest="Vegetarian",
+rating=4.0)
 
-    # commit all changes to cockroachDB
-    conn.commit()
+createReview(restaurant= "Subway",
+revText="Delicious restaurant! Food is very high quality, great location with a nice view. Not many vegetarian options available besides green burger, wish they had more main dishes to choose from. Great place for company dinners.",
+dietary_rest="Vegetarian",
+rating=4.2)
+
+createReview(restaurant= "P.F. Changs",
+revText="Not much you can eat if you are vegetarian. My wife and I came here for the first time and other than the appetizers and soup, there was nothing else we could eat. At least one vegetarian lunch dish would be nice.",
+dietary_rest="Vegetarian",
+rating=3.5)
+
+
+
+
+# print(validate_login(email='hi@gmail.com', password='pass'))
+
+
+
+# def resetTables() -> None:
+#     """ Drop all the tables made: for debugging purposes. """
+#     global conn
+#     with conn.cursor() as cur:
+
+#         # execute sql
+#         cur.execute("DROP TABLE user_info"),
+#         cur.execute("DROP TABLE reviews"),
+
+#         # send logger message for debugging
+#         logging.debug("resetTables(): status message: %s", cur.statusmessage)
+
+#     # commit all changes to cockroachDB
+#     conn.commit()
 
 
 # def testDB() -> None:
