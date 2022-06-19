@@ -299,12 +299,13 @@ border-radius: 50px;
 }
 
 .resto{
+  position:relative;
   
-width: 285px;
-height: 456px;
-left: 3000px;
-top: 300px;
-
+width: 400px;
+height: 950px;
+left: 999px;
+top: 100px;
+bottom:600px;
 
 background: #FFFFFF;
 border-radius: 50px;

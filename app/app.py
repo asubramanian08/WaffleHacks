@@ -95,7 +95,7 @@ def table():
         data.append(rest)
     
     headings = ('Name','Address')
-    return render_template("maps.html", headings=headings, data=data)
+    return render_template("maps2.html", headings=headings, data=data)
     
 
 @app.route("/searchmap2", methods=["POST", "GET"])
