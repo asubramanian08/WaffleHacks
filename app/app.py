@@ -18,10 +18,13 @@ def index():
 @app.route("/register", methods=["POST", "GET"])
 def register():
     # get user input from the html form
-    t_username = request.form.get("t_Username", "")
     t_email = request.form.get("t_Email", "")
-    t_password = request.form.get("t_Password", "")
+    t_password = request.form.get("t_Password")
+    if request.method == 'POST':
 
+        
+        return redirect(url_for("signin"))
+   
     # check for blanks
     if t_email == "":
         t_message = "Please fill in your email address"
@@ -32,7 +35,7 @@ def register():
         return render_template("register.html")
 
     # hash the password they entered
-    db.addUser(db.conn, email=t_email, password=t_password)
+    db.addUser(email=t_email, password=t_password)
     t_message = "Your user account has been added."
     return render_template("register.html")
 
@@ -41,11 +44,11 @@ def register():
 def signin():
     if request.method == 'POST':
 
-        t_email = request.form.get("t_Email", "")
-        t_password = request.form.get("t_Password", "")
-        db.validate_login(db.conn, email=t_email, password=t_password)
-        session['password'] = t_password
-        return redirect(url_for("/"))
+        t_email = request.form.get("t_Email")
+        t_password = request.form.get("t_Password")
+        print(t_email)
+        db.validate_login(email=t_email, password=t_password)
+        return redirect(url_for("restriction"))
     return render_template("login.html")
 
 
@@ -120,7 +123,9 @@ def table():
             rest.append('none')
         
         data.append(rest)
-    
+    rest_names = map.get_rest_names(places)
+    print(rest_names)
+
     headings = ('Name','Address', 'Rating')
     return render_template("maps2.html", headings=headings, data=data)
     
