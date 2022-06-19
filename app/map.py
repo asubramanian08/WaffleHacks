@@ -1,16 +1,12 @@
-from flask import Flask, render_template
 import os
 import requests
-app = Flask(__name__)
 
 
-@app.route('/')
-def index():
-
+def get_restaurants(location):
     # these are the parameters we have to set for search query to google places api
     # latitude and longitude of user inputted location, set manually to UCSD, later use
     # geolocation api to change:
-    location = "32.8801,-117.2340"
+    #loc = "32.8801,-117.2340"
     # radius set as default to 50000 meters, can change later to user input
     radius = "50000"
     searchType = "restaurant"
@@ -28,32 +24,40 @@ def index():
     places = []
     response_json = response.json()
     places.extend(response_json["results"])
+    return places
 
-    # what fields do we want to extract from the info google stores abt each place
-    # so far thinking restaurant name, formatted address, opening hours
-
+#get a list of the names of the restaurants
+def get_rest_names(restaurants):
     rest_names = []
-    rest_addresses = []
-    rest_open = []
-
-    for place in places:
-        try:
-            rest_names.append(place['name'])
+    for rest in restaurants:
+        try: 
+            rest_names.append(restaurants['name'])
         except:
             rest_names.append('none')
+    
+    return rest_names
 
+#get a list of the addresses of the restaurants
+def get_rest_addresses(restaurants):
+    rest_addresses = []
+    for rest in restaurants:
         try:
-            rest_addresses.append(place['formatted_address'])
+            rest_addresses.append(rest['formatted_address'])
         except:
             rest_addresses.append('none')
+    return rest_addresses
 
+#get the restaurant hours
+def get_rest_hours(restaurants):
+    rest_hours = []
+    for rest in restaurants:
         try:
-            rest_open.append(place['opening_hours'])
+            rest_hours.append(rest['opening_hours'])
         except:
-            rest_open.append('none')
-
-    print(*rest_names, sep=", ")
-    return "hello world"
+            rest_hours.append('none')
+    return rest_hours
 
 
-app.run(host='0.0.0.0', port=81)
+
+
+print(get_rest_names(get_restaurants(("32.8801,-117.2340")))
