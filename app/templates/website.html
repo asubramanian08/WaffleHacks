@@ -1,5 +1,9 @@
 <head>
     <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+
+</head>
+
+<body>
     <div class="topnav">
         <form action="/"><a><button class="redirect" id="Home">Nibble</button></a></form>
         <form action="/"><a><button class="redirect">Home</button></a></form>
@@ -7,14 +11,24 @@
         <form action="/Calories"><a><button class="redirect">Calories</button></a></form>
         <form action="/Sign-in"><a><button class="redirect" id="signup">Signup</button></a></form>
         <form action="/Sign-in"><a><button class="redirect" id="signup">Login</button></a></form>
-
-</head>
-
-<body>
+    </div>
 
     <div class="bg"></div>
+    <div class="buffer"></div>
+
+    <div class="tagline-left">
+        <!--<p style="font-family:Courier; color:#7F4E52; font-size: 20px;">
+        Are you ready to Nibble away? Welcome to the site which allows everyone to find the restaurant of their dreams regardless of dietary restriction. See reviews specifically catered toward your dietary restriction, count calories, and find restaurants for you!
+        </p>-->
+        Are you ready to Nibble away? Welcome to the site which allows everyone to find the restaurant of their dreams regardless of dietary restriction. See reviews specifically catered toward your dietary restriction, count calories, and find restaurants for you!
+    </div>
+    
+    <video autoplay muted loop id="myVideo">
+        <source src="/static/shu.mp4" type="video/mp4">
+    </video>
 
 
 </body>
 
 </html>
+

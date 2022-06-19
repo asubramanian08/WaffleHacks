@@ -48,6 +48,7 @@ left: 0px;
 top: 75px;
 
 background: #F5E1E3;
+z-index: -200;
 }
 
 
@@ -378,3 +379,29 @@ border-radius: 50px;
   border-radius: 15px 15px 15px 15px;
   border: none;
 }
+
+.buffer { height: 40px; }
+
+#myVideo {
+  position: fixed;
+  margin-top:100px;
+  margin-left:5%;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  z-index: -100;
+}
+
+.tagline-left{
+  position:absolute;
+  margin-top:9%;
+  text-align:center;
+  margin-left:11%;
+ font-family:Courier;
+  color:#7F4E52;
+   width:375px;
+   font-size:20px;
+ }
+
