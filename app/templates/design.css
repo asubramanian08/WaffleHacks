@@ -1,0 +1,31 @@
+.topnav {
+    position: absolute;
+    width: 1512px;
+    height: 75px;
+    left: 0px;
+    top: 0px;
+    
+    background: #D19C9D;
+  }
+
+  .topnav a {
+  float: left;
+  color:black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+main{
+  position: center;
+}
+
+footer{ 
+  position: bottom;
+  width: 1512px;
+  height: 75px;
+  left: 0px;
+  top: 0px;
+  background: #D19C9D;
+  
+}
